@@ -3,11 +3,19 @@
   <head>
     <title>Cryptodo</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <body>
+    <div>
 
+      <% if user_signed_in? %>
+        <%= link_to('Cerrar sesión', destroy_user_session_path, method: :delete) %>
+      <% else %>
+        <%= link_to('Iniciar sesión', new_user_session_path, method: :get) %> 
+      <% end %>
+    </div>  
+  </body>
   <body>
     <%= yield %>
   </body>
