@@ -7,15 +7,29 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <div>
-
-      <% if user_signed_in? %>
-        <%= link_to('Cerrar sesión', destroy_user_session_path, method: :delete) %>
-      <% else %>
-        <%= link_to('Iniciar sesión', new_user_session_path, method: :get) %> 
-      <% end %>
-    </div>  
+      <nav>
+        <div class="nav-wrapper be-violet">
+          <a href="<%= root_path %>"><img class="margin-logo" src="<%= asset_path('logo.png') %>" height="58" width="58"></a>
+          <a href="<%= root_path %>" class="brand-logo calcula marginleft">Cryptodo</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a class="calcula" href="/prices/index">Precios</a>
+            <li>
+              <a class="calcula">
+                <% if user_signed_in? %>
+                  <%= link_to('Cerrar sesion', destroy_user_session_path, method: :delete, class: 'calcula') %>
+                <% else %>
+                  <%= link_to('Iniciar sesion', new_user_session_path, method: :get, class: 'calcula') %> 
+                <% end %>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav> 
+ 
   </body>
+
+
+
   <body>
     <%= yield %>
   </body>

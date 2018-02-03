@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'prices/index'
+  
   devise_for :users
 
   get 'welcome/index'

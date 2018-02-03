@@ -1,0 +1,23 @@
+<h1 class="center calcula">Precios</h1>
+     <table class="bordered calcula">
+        <thead>
+          <tr>
+              <th>Moneda</th>
+              <th>Valor CLP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bitcoin:</td>
+            <td><%= @Bitcoin.parsed_response.first[:price_clp] %></td>
+          </tr>
+          <tr>
+            <td>Ethereum:</td>
+            <td><%= @Ethereum.parsed_response.first[:price_clp] %></td>
+          </tr>
+          <tr>
+            <td>Litecoin:</td>
+            <td><%= @Litecoin.parsed_response.first[:price_clp] %></td>
+          </tr>
+        </tbody>
+      </table>
