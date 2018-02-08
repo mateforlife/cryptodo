@@ -1,5 +1,6 @@
+
 <h1 class="center calcula">Precios</h1>
-     <table class="bordered calcula">
+     <table class="bordered calcula fadeIn">
         <thead>
           <tr>
               <th>Moneda</th>
@@ -7,17 +8,12 @@
           </tr>
         </thead>
         <tbody>
+          <% @Coins.each do |c|%>
           <tr>
-            <td>Bitcoin:</td>
-            <td><%= @Bitcoin.parsed_response.first[:price_clp] %></td>
+            <td><%= c[:name] %></td>
+            <td><%= c[:coin].parsed_response.first[:price_clp]%></td>
           </tr>
-          <tr>
-            <td>Ethereum:</td>
-            <td><%= @Ethereum.parsed_response.first[:price_clp] %></td>
-          </tr>
-          <tr>
-            <td>Litecoin:</td>
-            <td><%= @Litecoin.parsed_response.first[:price_clp] %></td>
-          </tr>
+          <% end %>
+
         </tbody>
       </table>
