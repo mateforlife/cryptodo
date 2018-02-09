@@ -11,9 +11,8 @@
           <% @Coins.each do |c|%>
           <tr>
             <td><%= c[:name] %></td>
-            <td><%= c[:coin].parsed_response.first[:price_clp]%></td>
+            <td><%= number_to_currency(c[:coin].parsed_response.first[:price_clp], precision: 0) %></td>
           </tr>
           <% end %>
-
         </tbody>
       </table>
