@@ -1,6 +1,6 @@
-module Utils
-  class PriceFormater
-
+module Utils 
+  class PriceFormatter
+    
     def convert_to(currency, amount)
       case currency.downcase
         when 'clp' then convert_to_clp(amount)

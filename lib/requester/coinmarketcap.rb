@@ -8,7 +8,7 @@ module Requester
     end
 
     def parsed_response
-      parsed_data = JSON.parse(@response, symbolize_names: true)
+      JSON.parse(@response, symbolize_names: true)
     end
   end
 end
